@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<%- include('partials/head') %>
+	</head>
+	<body>
+		<%- include('partials/nav') %> div.
+		<div class="container-fluid">
+			<div class="container">
+				<div class="alert alert-light text-center h2 text-dark" role="alert">
+					Editar Servicio
+				</div>
+				<form class="formularios" action="/editarServ" method="post">
+					<div class="row">
+						<div class="col-6">
+							<div class="form-group">
+								<input type="text" name="id" id="id" hidden value="<%= serv.id %>" />
+								<label for="nombre">Nombre:</label>
+								<input type="text" name="nombre" id="nombre" class="nombre" required value="<%= serv.nombre %>" />
+							</div>
+						</div>
+						<div class="col-3">
+							<div class="form-group">
+								<label for="pesos">Pesos:</label>
+								<input type="number" name="pesos" id="pesos" class="pesos" required value="<%= serv.pesos %>" min="0" />
+							</div>
+						</div>
+						<div class="col-3">
+							<div class="form-group">
+								<label for="centavos">Centavos:</label>
+								<input
+									type="number"
+									name="centavos"
+									id="centavos"
+									class="centavos"
+									required
+									value="<%= serv.centavos %>"
+									min="0"
+								/>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-3">
+							<div class="form-group">
+								<label for="centavos">Caracteristica:</label>
+								<input
+									type="text"
+									name="caracteristica1"
+									id="caracteristica1"
+									class="caracteristica1"
+									value="<%= serv.caracteristica1 %>"
+									required
+								/>
+							</div>
+						</div>
+						<div class="col-3">
+							<div class="form-group">
+								<label for="centavos">Caracteristica:</label>
+								<input
+									type="text"
+									name="caracteristica2"
+									id="caracteristica2"
+									class="caracteristica2"
+									value="<%= serv.caracteristica2 %>"
+									required
+								/>
+							</div>
+						</div>
+						<div class="col-3">
+							<div class="form-group">
+								<label for="centavos">Caracteristica:</label>
+								<input
+									type="text"
+									name="caracteristica3"
+									id="caracteristica3"
+									class="caracteristica3"
+									value="<%= serv.caracteristica3 %>"
+									required
+								/>
+							</div>
+						</div>
+						<div class="col-3">
+							<div class="form-group">
+								<label for="centavos">Caracteristica:</label>
+								<input
+									type="text"
+									name="caracteristica4"
+									id="caracteristica4"
+									class="caracteristica4"
+									value="<%= serv.caracteristica4 %>"
+									required
+								/>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-3">
+							<div class="form-group">
+								<label for="centavos">Caracteristica:</label>
+								<input
+									type="text"
+									name="caracteristica5"
+									id="caracteristica5"
+									class="caracteristica5 text-control"
+									value="<%= serv.caracteristica5 %>"
+									required
+								/>
+							</div>
+							<div class="form-group">
+								<label for="stock">Stock:</label>
+								<input
+									type="number"
+									name="stock"
+									id="stock"
+									class="stock text-control"
+									value="<%= serv.stock %>"
+									min="0"
+									required
+								/>
+							</div>
+							<div class="form-group">
+								<label for="status">Satus:</label><br />
+								<div class="input-group input-group-sm mb-3">
+									<div class="input-group-prepend">
+										<span class="input-group-text bg-success text-white" id="inputGroup-sizing-sm">Activo</span>
+									</div>
+									<input type="checkbox" name="status" id="status" class="status form-control" />
+								</div>
+							</div>
+						</div>
+						<div class="col-12">
+							<div class="form-group">
+								<label for="centavos">Descripcion:</label>
+								<textarea
+									name="descripcionServicio"
+									id="descripcionServicio"
+									class="descripcionServicio text-control"
+									rows="7"
+									placeholder="<%= serv.descripcionServicio %>"
+									required
+								></textarea>
+							</div>
+						</div>
+						<div class="col-4"></div>
+						<div class="col-4 mb-5">
+							<input type="submit" value="Confirmar Edicion" class="btn btn-success" />
+						</div>
+						<div class="col-4"></div>
+					</div>
+				</form>
+			</div>
+		</div>
+		<%- include('partials/footer') %>
+	</body>
+
+	<%- include('partials/scripts') %>
+</html>

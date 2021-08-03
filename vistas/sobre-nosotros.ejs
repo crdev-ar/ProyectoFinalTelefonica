@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<%- include('partials/head') %>
+	</head>
+	<body>
+		<%- include('partials/nav') %>
+		<main class="container">
+			<!-- Nosotros -->
+			<div class="row pb-5 pt-5">
+				<div class="col-xl-6 col-md-6 mb-8">
+					<div>
+						<h1 class="font-bold text-black ">Sobre Nosotros</h1>
+					</div>
+					<div>
+						<span class="about-text">
+							Hola! Somos <b>Ar2</b> – una agencia de desarrollo ubicada en Buenos Aires, Argentina.<br />
+							Desarrollamos aplicaciones, sitios web e innovamos con nuevas plataformas para marcas y clientes. Creamos a partir
+							de nuestra pasión, talento y experiencia.<br />Somos un grupo de profesionales con una trayectoria de más de 10 años
+							en el mercado de la informática y la prestación de servicios de diseño y desarrollo web. Contamos con un equipo de
+							trabajo compuesto por diseñadores y desarrolladores de primer nivel.<br />Logramos que su negocio se diferencie
+							gracias al diseño web y el desarrollo de aplicaciones online, funcionales, innovadoras y de alta calidad.<br />Trabajamos
+							a tiempo, en contacto con nuestros clientes y adaptándonos siempre a los cambios.<br />Somos apasionados por lo que
+							hacemos. Nuestra responsabilidad, innovación y compromiso nos permiten estar un paso adelante.
+						</span>
+					</div>
+				</div>
+				<div class="col-xl-6 col-md-6 mb-3 pt-5">
+					<object data="/imgFile/ilu/online.svg" type="image/svg+xml" style="width: 100%;"></object>
+				</div>
+			</div>
+			<hr />
+			<hr />
+			<div class="row pb-5 pt-5">
+				<div class="col-xl-6 col-md-6 mb-12">
+					<object data="/imgFile/ilu/quiz.svg" type="image/svg+xml" style="width: 100%;"></object>
+				</div>
+				<div class="col-xl-6 col-md-6 mb-12">
+					<div>
+						<h1 class="font-bold text-black ">Por qué elegirnos?</h1>
+					</div>
+					<div>
+						<span class="why-text">
+							Todos los clientes son distintos y cada caso esconde sus propias particularidades. Por ende, todos nuestros clientes
+							requieren una solución personalizada. En <b>Ar2</b> creemos en el desarrollo de soluciones digitales estratégicas a
+							medida para cualquier situación que se nos presente. Sea una Aplicacion Web, una simple landing page para su negocio
+							o una aplicación mobile para iOS y Android, a cada caso aplicamos el mismo proceso: descubrir junto al cliente la
+							dirección a seguir, establecer un diseño especifico y desarrollar la solución justa para satisfacer sus necesidades.
+						</span>
+					</div>
+				</div>
+			</div>
+			<hr />
+			<hr />
+			<!-- Team Area -->
+			<div class="row">
+				<% for(var i = 0; i< equipo.length; i++) { %>
+
+				<!-- Team Member 0 -->
+				<div class="col-xl-4 col-md-6 mb-4">
+					<div class="card border-0 shadow">
+						<img src="<%= equipo[i].imgURL %>" class="card-img-top img-thumbnail imgT" alt="..." />
+						<div class="card-body text-center">
+							<h5 class="card-title mb-0"><%= equipo[i].apellido %> <%= equipo[i].nombre %></h5>
+							<div class="card-text text-black-50">
+								<h6 class="pt-2"><%= equipo[i].posicion %></h6>
+								<p>
+									<%= equipo[i].descripcion %>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<% } %>
+
+				<!-- Team Member 1 -->
+				<div class="col-xl-4 col-md-6 mb-4">
+					<div class="card border-0 shadow">
+						<img src="/imgTeam/Static/leandro.jpg" class="card-img-top img-thumbnail imgT" alt="..." />
+						<div class="card-body text-center">
+							<h5 class="card-title mb-0">Arroyo Leandro</h5>
+							<div class="card-text text-black-50">
+								<h6 class="pt-2">Web Developer</h6>
+								<p>
+									Estudiante de Licenciatura en Sistemas y Tecnico en Programacion (adeuda 1 final), en el tiempo que llevo en
+									este mundo me toco hacer proyectos con c++, c# utlizando .net, ASP.net y algunos proyectos usando PHP con el
+									Framework Laravel. <br />
+									Trabajo de forma Freelance realizando unicamente diseño y programacion Web, junto a un grupo de trabajo con el
+									cual comparti carrera. <br />
+									Siempre me gusto el diseño y la programacion, por lo que me interese mucho en el Front ya que abarcaba lo mejor
+									de los dos mundos.
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Team Member 2 -->
+				<div class="col-xl-4 col-md-6 mb-4">
+					<div class="card border-0 shadow">
+						<img src="/imgTeam/Static/alejandro.jpg" class="card-img-top img-thumbnail imgT" alt="..." />
+						<div class="card-body text-center">
+							<h5 class="card-title mb-0">Romano Alejandro</h5>
+							<div class="card-text text-black-50">
+								<h6 class="pt-2">Web Developer</h6>
+								<p>
+									Trabajo en tecnología desde hace más de 30 años. Comencé programando en Cobol y luego me especialicé en sistemas
+									operativos de mainframes IBM, programando Assembler y dando soporte a grandes centros de cómputos. Más tarde me
+									capacité en diferentes soluciones de software y con la irrupción de Internet, me apasioné por las posibilidades
+									de ese nuevo mundo. Actualmente me encuentro fuertemente orientado a desarrollar soluciones y servicios basados
+									en Cloud y formando este nuevo equipo con Cristian y Leandro, de los que aprendo cada día.
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Team Member 3 -->
+				<div class="col-xl-4 col-md-6 mb-4">
+					<div class="card border-0 shadow">
+						<img src="/imgTeam/Static/cristian.png" class="card-img-top img-thumbnail imgT" alt="..." />
+						<div class="card-body text-center">
+							<h5 class="card-title mb-0">Rios Cristian</h5>
+							<div class="card-text text-black-50">
+								<h6 class="pt-2">Web Developer</h6>
+								<p>
+									Apasionado por la tecnología, la innovación en general, las telecomunicaciones, la buena lectura y la música.
+									Comencé en el mundo de la programación con Pascal en la secundaria y me dediqué casi una década a dar Soporte
+									Técnico IT . Actualmente desarrollo un emprendimiento propio que brinda asesoría técnica para la implementación
+									de sistemas en materia de seguridad electrónica (alarmas, cctv, control de accesos). El desarrollo front-end
+									está en un momento de altísima demanda, por lo cual decidí sumarme a este nuevo desafío.
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- /.row -->
+		</main>
+
+		<%- include('partials/footer') %>
+	</body>
+
+	<%- include('partials/scripts') %>
+</html>

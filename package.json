@@ -1,0 +1,22 @@
+{
+  "name": "27-11",
+  "version": "1.0.0",
+  "description": "Proyecto modelo para trabajo final",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "mongoose": "^5.7.12",
+    "multer": "^1.4.2",
+    "nodemon": "^2.0.1"
+  },
+  "devDependencies": {
+    "morgan": "^1.9.1"
+  }
+}

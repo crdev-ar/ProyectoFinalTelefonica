@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<%- include('partials/head') %>
+	</head>
+	<body>
+		<%- include('partials/nav') %> div.
+		<div class="container-fluid">
+			<div class="container">
+				<div class="alert alert-light text-center h2 text-dark" role="alert">
+					Alta de Miembros del Equipo
+				</div>
+				<form class="formularios" action="/nuevoMiembro" method="post" enctype="multipart/form-data">
+					<div class="row">
+						<div class="col-6">
+							<div class="form-group">
+								<label for="nombre">Nombre:</label>
+								<input type="text" name="nombre" id="nombre" class="nombre" placeholder="Ingrese el Nombre" required />
+							</div>
+						</div>
+						<div class="col-6">
+							<div class="form-group">
+								<label for="apellido">Apellido:</label>
+								<input type="text" name="apellido" id="apellido" class="apellido" placeholder="Ingrese el Apellido" required />
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-6">
+							<div class="form-group">
+								<label for="imgURL"> Imagen:</label>
+								<input type="file" name="imgURL" id="imgURL" class="imgURL" required />
+
+								<div class="card img-prev" id="imagenPreview"></div>
+							</div>
+						</div>
+						<div class="col-6">
+							<div class="form-group">
+								<label for="posicion">Posicion:</label>
+								<input
+									type="text"
+									name="posicion"
+									id="posicion"
+									class="posicion"
+									placeholder="Ingrese la posicion de trabajo"
+									required
+								/>
+							</div>
+						</div>
+						<div class="col-12">
+							<div class="form-group">
+								<label for="descripcion">Descripcion</label>
+								<textarea
+									name="descripcion"
+									rows="10"
+									cols="40"
+									id="descripcion"
+									class="descripcion"
+									placeholder="Ingrese una descripcion"
+									required
+								></textarea>
+							</div>
+						</div>
+						<div class="col-4"></div>
+						<div class="col-4 mb-5">
+							<input type="submit" value="crear" class="btn btn-primary" />
+						</div>
+						<div class="col-4"></div>
+					</div>
+				</form>
+			</div>
+		</div>
+		<%- include('partials/footer') %>
+	</body>
+
+	<%- include('partials/scripts') %>
+</html>

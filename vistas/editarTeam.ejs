@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<%- include('partials/head') %>
+	</head>
+	<body>
+		<%- include('partials/nav') %> div.
+		<div class="container">
+			<div class="alert alert-light text-center h2 text-dark" role="alert">
+				Editar Miembro del Equipo
+			</div>
+			<div class="col-xl-8 col-md-8 mb-8 centerDiv">
+				<form class="formularios" action="/editarTeam" method="post" enctype="multipart/form-data">
+					<!-- Team Member -->
+					<div class="card border-0 shadow bg-dark">
+						<div id="imagenPreview"></div>
+						<img src="<%= team.imgURL %>" class="card-img-top img-thumbnail imgEdit" id="imgAnt" val="<%= team.imgURL %>" />
+						<input type="file" name="imgURL" id="imgURL" class="imgURL" />
+						<input type="text" name="imgURL2" id="imgURL2" hidden />
+						<div class="card-body ">
+							<div class="card-title mb-0">
+								<input type="text" name="id" id="id" hidden value="<%= team.id %>" />
+								Nombre:&nbsp;&nbsp;&nbsp;
+								<input type="text" name="nombre" id="nombre" class="nombre d-inline" value="<%= team.nombre %>" required /><br />
+								Apellido:&nbsp;&nbsp;&nbsp;
+								<input
+									type="text"
+									name="apellido"
+									id="apellido"
+									class="apellido d-inline mt-2"
+									value="<%= team.apellido %>"
+									required
+								/>
+							</div>
+							<div class="card-text ">
+								<div class="pt-2">
+									Posicion:&nbsp;&nbsp;&nbsp;
+									<input
+										type="text"
+										name="posicion"
+										id="posicion"
+										class="posicion d-inline"
+										value="<%= team.posicion %>"
+										required
+									/>
+									<br /><br />
+									<label for="descripcion" class="float-left">Descripcion:</label>
+								</div>
+
+								<textarea
+									name="descripcion"
+									rows="10"
+									cols="40"
+									id="descripcion"
+									class="descripcion d-inline"
+									placeholder="<%= team.descripcion %>"
+									required
+								></textarea>
+							</div>
+						</div>
+						<input type="button" value="Actualizar" class="btn btn-success ml-4" id="botonEditarTeam" />
+						<br />
+					</div>
+				</form>
+			</div>
+		</div>
+		<%- include('partials/footer') %>
+	</body>
+
+	<%- include('partials/scripts') %>
+</html>

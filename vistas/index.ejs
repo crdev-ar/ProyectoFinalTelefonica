@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <%- include('partials/head') %>
+</head>
+<body>
+
+    <%- include('partials/nav') %>
+   
+    <main class="contenido">
+            <!-- imagen central+Titulo -->
+            <div class="contenedor1">
+                <img class="img-fluid" src="/imgFile/img/img1.jpg" id="img1">
+                <div class="row">
+                    <div class="col titulo">
+                        <h1>Team AR Web Developers</h1>
+                        <br>
+                        <h2>Desarrolladores Front-End</h2>
+                    </div>
+                    <!--cierra col -->
+                </div>
+                <!--cierra row -->
+                <!-- logos html,css, etc. con bootstrap -->
+                <div class="container-fluid logos">
+                    <div class="row">
+                        <div class="col"><i class="fab fa-html5" id="html5"></i></div>
+                        <div class="col"><i class="fab fa-css3"></i></div>
+                        <div class="col"><i class="fab fa-js"></i></div>
+                        <div class="col"><i class="fab fa-node"></i></div>
+                        <div class="col"><i class="fab fa-angular"></i></div>
+                        <div class="col"><i class="fab fa-bootstrap"></i></div>
+                    </div>
+                    <!--cierra row -->
+                </div>
+                <!--cierra contenedor logos -->
+            </div>
+            <!--cierra contenedor 1-->
+      </main>
+      <!--cierra main -->
+      
+<div id="generic_price_table">   
+    <section>
+            <div class="container">
+               <!--Servicios HEADING START-->
+               <div class="price-heading clearfix">
+                  <h1>Equipo Centro Universitario Tigre</h1>
+              </div>
+              <!--//Servicios HEADING END-->
+                <img src="/imgTeam/Static/team.jpeg" class="img-fluid" alt="Responsive image">
+                <div class="row">
+                    <div class="col-md-12">
+                        <!--Servicios HEADING START-->
+                        <div class="price-heading clearfix mt-4">
+                            <h1>Servicios</h1>
+                        </div>
+                        <!--//Servicios HEADING END-->
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                
+                <!--BLOCK ROW START-->
+                <div class="row">
+                    
+                    <% for(var i = 0; i< servicios.length; i++) { %>
+                     <% if(servicios[i].status == true){ %>
+                  <!-- INICIO CARD SERVICIO -->
+                    <div class="col-md-4">
+                    
+                        <!--PRICE CONTENT START-->
+                        <div class="generic_content clearfix borderbox">
+                            
+                            <!--HEAD PRICE DETAIL START-->
+                            <div class="generic_head_price clearfix">
+                            
+                                <!--HEAD CONTENT START-->
+                                <div class="generic_head_content clearfix">
+                                
+                                    <!--HEAD START TITULO-->
+                                    <div class="head_bg"></div>
+                                    <div class="head">
+                                        <span><%= servicios[i].nombre %></span>
+                                    </div>
+                                    <!--//HEAD TITULO END-->
+                                    
+                                </div>
+                                <!--//HEAD CONTENT END-->
+                                
+                                <!--PRECIOS START-->
+                                <div class="generic_price_tag clearfix">	
+                                    <span class="price">
+                                        <span class="sign">$</span>
+                                        <span class="currency"><%= servicios[i].pesos %></span>
+                                        <span class="cent"><%= servicios[i].centavos %></span>
+                                        <span class="month">/Mes</span>
+                                    </span>
+                                </div>
+                                <!--//PRECIOS END-->
+                                
+                            </div>                            
+                            <!--//HEAD PRECIOS DETALLES END-->
+                            
+                            <!--FEATURE LIST START-->
+                            <div class="generic_feature_list">
+                                <ul>
+                                    <li><span><%= servicios[i].caracteristica1 %></span></li>
+                                    <li><span><%= servicios[i].caracteristica2 %></span></li>
+                                    <li><span><%= servicios[i].caracteristica3 %></span></li>
+                                    <li><span><%= servicios[i].caracteristica4 %></span></li>
+                                    <li><span><%= servicios[i].caracteristica5 %></span></li>
+                                </ul>
+                            </div>
+                            <!--//FEATURE LIST END-->
+                            
+                            <!--BUTTON START-->
+                            
+                            <div class="generic_price_btn clearfix">
+                              <a href="" data-toggle="modal"data-target="#Modal-new<%= servicios[i]._id %>">Ver Más</a>
+                           </div>
+                            <!--//BUTTON END-->
+                        </div>
+                        <!--//PRICE CONTENT END-->
+                         <div class="separacionHeaderFooter"></div>   
+                    </div> 
+                    <!-- FIN CARD SERVICIO -->
+                    
+                    <!-- MODAL -->
+                    <div class="modal fade" id="Modal-new<%= servicios[i]._id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalCenterTitle"><%= servicios[i].nombre %></h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        </div>
+                        <div class="modal-body">
+                        <ul>
+                        <li><%= servicios[i].descripcionServicio %></li>
+                        </ul>
+                        </div>
+                        <div class="modal-footer">
+                        <a href="#" class="btn btn-secondary" data-dismiss="modal">Cerrar</a>
+                        <a type="button" class="btn btn-success" href="/comprarServicio/<%= servicios[i]._id %>">Contratar $ <%= servicios[i].pesos%>,<%= servicios[i].centavos%> </a>
+                        </div>
+                        </div>
+                        </div>
+                        </div>
+                     <% } %> <!-- Cierre IF -->
+                    <% } %> <!-- Cierre For -->
+
+                    <!-- INICIO CARD SERVICIO -->
+                    <div class="col-md-4">
+                    
+                            <!--PRICE CONTENT START-->
+                            <div class="generic_content clearfix borderbox">
+                                
+                                <!--HEAD PRICE DETAIL START-->
+                                <div class="generic_head_price clearfix">
+                                
+                                    <!--HEAD CONTENT START-->
+                                    <div class="generic_head_content clearfix">
+                                    
+                                        <!--HEAD START TITULO-->
+                                        <div class="head_bg"></div>
+                                        <div class="head">
+                                            <span>Ejemplo de Servicio</span>
+                                        </div>
+                                        <!--//HEAD TITULO END-->
+                                        
+                                    </div>
+                                    <!--//HEAD CONTENT END-->
+                                    
+                                    <!--PRECIOS START-->
+                                    <div class="generic_price_tag clearfix">	
+                                        <span class="price">
+                                            <span class="sign">$</span>
+                                            <span class="currency">1500</span>
+                                            <span class="cent">99</span>
+                                            <span class="month">/Mes</span>
+                                        </span>
+                                    </div>
+                                    <!--//PRECIOS END-->
+                                    
+                                </div>                            
+                                <!--//HEAD PRECIOS DETALLES END-->
+                                
+                                <!--FEATURE LIST START-->
+                                <div class="generic_feature_list">
+                                    <ul>
+                                        <li><span>Caracteristica 1</span></li>
+                                        <li><span>Caracteristica 2</span></li>
+                                        <li><span>Caracteristica 3</span></li>
+                                        <li><span>Caracteristica 4</span></li>
+                                        <li><span>Caracteristica 5</span></li>
+                                    </ul>
+                                </div>
+                                <!--//FEATURE LIST END-->
+                                
+                                <!--BUTTON START-->
+                                
+                                <div class="generic_price_btn clearfix">
+                                  <a href="" data-toggle="modal"data-target="#Modal-new">Ver Más</a>
+                               </div>
+                                <!--//BUTTON END-->
+                            </div>
+                            <!--//PRICE CONTENT END-->
+                             <div class="separacionHeaderFooter"></div>   
+                        </div> 
+                        <!-- FIN CARD SERVICIO -->
+                        
+                        <!-- MODAL -->
+                        <div class="modal fade" id="Modal-new" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                            <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalCenterTitle">Titulo de Servicio Cargado</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            </div>
+                            <div class="modal-body">
+                            <ul>
+                            <li>Descripcion del servicio</li>
+                            </ul>
+                            </div>
+                            <div class="modal-footer">
+                            <a href="#" class="btn btn-secondary" data-dismiss="modal">Cerrar</a>
+                            <a type="button" class="btn btn-success" href="">Contratar $1500 </a>
+                            </div>
+                            </div>
+                            </div>
+                            </div>
+                </div>
+        </section>   
+    </div>
+
+
+        <%- include('partials/footer') %>
+</body>
+    <%- include('partials/scripts') %>
+
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+	<%- include('partials/head') %>
+	<body>
+		<%- include('partials/nav') %>
+		<div class="wrapper">
+			<!-- Sidebar -->
+			<nav id="sidebar" class="bg-dark mt-4">
+				<div class="sidebar-header mt-3 text-center">
+					<h3>Dashboard</h3>
+				</div>
+				<ul class="list-unstyled components bg-dark">
+					<li class="nav-item">
+						<button class="nav-link botonSidebar" id="servicio">Servicios</button>
+					</li>
+					<li class="nav-item">
+						<button class="nav-link botonSidebar" id="team">Team</button>
+					</li>
+				</ul>
+			</nav>
+
+			<main role="main" id="content">
+				<!-- BOTON ABRIR SIDEBAR -->
+				<button type="button" id="sidebarCollapse" class="btn-info mt-4 mb-4">
+					Menu&nbsp;&nbsp;<i class="fas fa-align-left"></i>
+				</button>
+				<!-- BOTON ABRIR SIDEBAR -->
+
+				<div class="table-responsive">
+					<!-- INICIO TABLA SERVICIO -->
+
+					<!-- BOTON NUEVO ELEMENTO -->
+
+					<div style="width: 200px;" id="nuevoServicio">
+						<a href="/nuevo-servicio" class="btn btn-primary mb-4">Nuevo Servicio</a>
+					</div>
+					<!-- FIN BOTON NUEVO ELEMENTO -->
+
+					<!-- BOTON NUEVO ELEMENTO -->
+					<div style="width: 200px;" id="nuevoTeam">
+						<a href="/nuevoMiembro" class="btn btn-primary mb-4">Nuevo Integrante</a>
+					</div>
+
+					<!-- FIN BOTON NUEVO ELEMENTO -->
+					<table class="table table-light table-striped table-bordered table-condensed" id="tablaServicio">
+						<thead class="thead-light text-center">
+							<tr id="cabeceraServicio">
+								<th>#</th>
+								<th>Status</th>
+								<th>Nombre</th>
+								<th>Precio</th>
+								<th>Stock</th>
+								<th>Caracteristica 1</th>
+								<th>Caracteristica 2</th>
+								<th>Caracteristica 3</th>
+								<th>Caracteristica 4</th>
+								<th>Caracteristica 5</th>
+								<th>Descripcion</th>
+								<th>Editar</th>
+								<th>Eliminar</th>
+							</tr>
+						</thead>
+						<tbody>
+							<% for(var i = 0; i< modelos.servicio.length; i++) { %>
+							<tr>
+								<td><%= i %></td>
+								<td>
+									<% if(modelos.servicio[i].status){ %> Activo <% } %> <% if(!modelos.servicio[i].status){ %> Inactivo <% } %>
+								</td>
+								<td><%= modelos.servicio[i].nombre %></td>
+								<td><%= modelos.servicio[i].pesos %><%= modelos.servicio[i].centavos %></td>
+								<td><%= modelos.servicio[i].stock %></td>
+								<td><%= modelos.servicio[i].caracteristica1 %></td>
+								<td><%= modelos.servicio[i].caracteristica2 %></td>
+								<td><%= modelos.servicio[i].caracteristica3 %></td>
+								<td><%= modelos.servicio[i].caracteristica4 %></td>
+								<td><%= modelos.servicio[i].caracteristica5 %></td>
+								<td><%= modelos.servicio[i].descripcionServicio %></td>
+								<td>
+									<a class="btn btn-warning fas fa-edit editarServicio" href="/editarServ/<%= modelos.servicio[i]._id %>"></a>
+								</td>
+								<td>
+									<a class="btn btn-danger fas fa-trash-alt borrarServicio" href="/borrarServ/<%= modelos.servicio[i]._id %>"></a>
+								</td>
+							</tr>
+							<% } %>
+						</tbody>
+					</table>
+					<!-- FIN TABLA SERVICIO -->
+
+					<!-- TABLA EQUIPO -->
+					<table class="table table-light" id="tablaTeam">
+						<thead class="thead-light">
+							<tr id="cabeceraServicio">
+								<th>#</th>
+								<th>Nombre</th>
+								<th>Apellido</th>
+								<th>Posicion</th>
+								<th>Descripcion</th>
+								<th>Editar</th>
+								<th>Eliminar</th>
+							</tr>
+						</thead>
+						<tbody>
+							<% for(var i = 0; i< modelos.equipo.length; i++) { %>
+							<tr>
+								<td><%= i %></td>
+								<td><%= modelos.equipo[i].nombre %></td>
+								<td><%= modelos.equipo[i].apellido %></td>
+								<td><%= modelos.equipo[i].posicion %></td>
+								<td><%= modelos.equipo[i].descripcion %></td>
+								<td>
+									<a class="btn btn-warning fas fa-edit editarEquipo" href="/editarTeam/<%= modelos.equipo[i]._id %>"></a>
+								</td>
+								<td>
+									<a class="btn btn-danger fas fa-trash-alt borrarEquipo" href="/borrarTeam/<%= modelos.equipo[i]._id %>"></a>
+								</td>
+							</tr>
+							<% } %>
+						</tbody>
+					</table>
+					<!-- FIN TABLA EQUIPO -->
+				</div>
+			</main>
+		</div>
+
+		<%- include('partials/footer') %>
+	</body>
+	<%- include('partials/scripts') %>
+</html>
