@@ -4,12 +4,14 @@ Final Challenge Front End Developer course in Fundación Telefónica Movistar Ar
 Development of a CRUD based on Mongodb database.
 
 Used Technologies: 
--Node Js
--Express
-- MVC
--Nodemon
+
+- Node Js
+- Express
+- Render side server
+- Nodemon for development instance
 - Html5 / css3
 - Javascript
+- No SQL Mongo DB Data Base
 
 For Run this App :
 - Install Node Js in your computer (https://nodejs.org/en/).
